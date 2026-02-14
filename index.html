@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos Activités</title>
+
+<style>
+:root{
+    --primary:#111827;
+    --accent:#2563eb;
+    --light:#f9fafb;
+    --card:#ffffff;
+    --border:#e5e7eb;
+}
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background:linear-gradient(135deg,#f3f4f6,#e5e7eb);
+    padding:20px;
+    color:#1f2937;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:28px;
+}
+
+details{
+    background:var(--card);
+    border-radius:14px;
+    margin-bottom:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    overflow:hidden;
+    border:1px solid var(--border);
+    transition:all 0.3s ease;
+}
+
+details[open]{
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+summary{
+    padding:18px 20px;
+    font-weight:600;
+    font-size:17px;
+    cursor:pointer;
+    list-style:none;
+    position:relative;
+}
+
+summary::marker{
+    display:none;
+}
+
+summary::after{
+    content:"＋";
+    position:absolute;
+    right:20px;
+    font-size:18px;
+    transition:0.3s;
+    color:var(--accent);
+}
+
+details[open] > summary::after{
+    content:"−";
+}
+
+.submenu{
+    margin:10px 20px 15px 20px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:#f9fafb;
+}
+
+.submenu summary{
+    font-size:15px;
+    padding:14px 16px;
+    background:white;
+    border-radius:8px;
+}
+
+.submenu summary:hover{
+    background:#eef2ff;
+}
+
+.content{
+    padding:15px;
+    white-space:pre-wrap;
+    font-size:14px;
+    line-height:1.7;
+    animation:fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-5px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:600px){
+    body{padding:12px;}
+    h1{font-size:22px;}
+    summary{font-size:15px;}
+}
+
+.images img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+}
+
+.video-gif {
+  position: relative;
+  max-width: 500px;
+}
+
+.video-gif video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.sound-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  pointer-events: none;
+}
+</style>
+
+<script>
+window.onload = function(){
+    const params = new URLSearchParams(window.location.search);
+    const s = params.get("s");
+    if(!s) return;
+
+    const mainLetter = s.charAt(0);
+    const main = document.getElementById(mainLetter);
+    if(main) main.open = true;
+
+    if(s.length > 1){
+        const sub = document.getElementById(s);
+        if(sub){
+            sub.open = true;
+            sub.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+    }
+}
+</script>
+
+</head>
+<body>
+
+<!-- ================= A ================= -->
+
+<details id="A">
+<summary>Guiah Songs : Création de contenus, infographie et 3D</summary>
+<div class="video-gif">
+	<video id="maVideo" autoplay muted loop playsinline>
+		<source src="Guiah_Songs.mp4" type="video/mp4">
+	</video>
+	<div class="sound-icon" id="soundIcon">🔇</div>
+	<script>
+		const video = document.getElementById("maVideo");
+		const icon = document.getElementById("soundIcon");
+
+		video.addEventListener("click", () => {
+			video.muted = !video.muted;
+			if (video.muted) {
+				icon.textContent = "🔇";
+			} else {
+				icon.textContent = "🔊";
+			}
+		});
+	</script>
+</div>
+<details class="submenu" id="A1">
+<summary>1) Liste non exhaustive des services proposés</summary>
+<div class="content">
+- Chansons personnalisées (particuliers et entreprises)
+- Vidéo personnalisées (particuliers et entreprises)
+- Création de publications pour mettre en valeur des produits ou une entreprise
+- Création d'animations de produits (vidéo)
+- Création d'histoire personnalisées (particuliers et entreprises)
+- Création de logos
+- Création de cartes de visite, papier entête, etc.
+- Création de flyers
+- Création d'étiquettes et d'emballages
+- Création de modèles 3D et notamment des emballages 3D et des livres d'histoires animées en 3D
+- Création de CV personnalisés
+- Création de plans 3D (bâtiment)
+- Création de sites internet
+- Etc.
+</div>
+</details>
+
+<details class="submenu" id="A2">
+<summary>2) Tarifs</summary>
+<div class="content">
+Guiah Songs se veut vraiment abordable pour tous. La plupart de nos prestations commencent à 5.000 FCFA.
+</div>
+</details>
+
+<details class="submenu" id="A3">
+<summary>3) Voir des exemples de réalisations</summary>
+<div class="content">
+Vous pouvez consulter mes différentes réalisations sur :
+
+- <a href="https://www.tiktok.com/@guiah.songs" target="_blank">Mon Tiktok</a>
+- <a href="https://fb.com/Guiah.Songs/" target="_blank">Mon Facebook</a>
+- <a href="https://www.youtube.com/@GuiahSongs" target="_blank">Ma chaîne Youtube</a>
+
+</div>
+</details>
+
+<details class="submenu" id="A4">
+<summary>4) Comment se passe une commande ?</summary>
+<div class="content">
+Tout est expliqué dans cette vidéo :
+
+- <a href="https://www.tiktok.com/@guiah.songs/video/7606531777657572616" target="_blank">Tiktok</a>
+- <a href="https://youtube.com/shorts/ARTdok110rs" target="_blank">Youtube</a>
+</div>
+</details>
+
+<details class="submenu" id="A5">
+<summary>5) Les chansons personnalisées</summary>
+<div class="content">
+5.000 F seulement ! Pour tes événements ou la promotion de tes produits 👍
+
+🎵 Chansons personnalisées – Pour les émotions… ou la promotion ! 🎵
+
+Tu veux marquer un événement personnel avec une chanson unique ? Ou faire connaître ton produit avec un jingle original ? Tu es au bon endroit.
+
+👩🏾‍🎤 Pour les moments personnels inoubliables :
+
+Mariage, anniversaire, naissance, demande en mariage, hommage, remerciement, motivation…
+Offre une chanson créée sur mesure, avec tes mots, ton histoire, ta sensibilité.
+
+💼 Pour les produits et marques :
+
+Tu lances un produit ? Tu veux te démarquer sur les réseaux ?
+Fais-le avec une chanson publicitaire originale, drôle, rythmée ou émotive, qui reste dans la tête !
+
+➡️ Idéal pour :
+
+Publicité radio ou TikTok
+Lancement de produit
+Présentation d’un concept
+Générique YouTube ou intro de podcast
+Spots locaux (boutiques, services, événements)
+
+⚙️ Le processus est simple et rapide :
+
+1. Tu m’envoies ta demande
+Pour un événement perso ou un produit, tu me donnes le maximum d’infos : mots-clés, message à faire passer, ambiance musicale, voix masculine ou féminine, etc.
+Tu peux même fournir tes paroles si tu veux.
+
+2. Tu valides le lancement de la commande
+Un acompte de 50 % est demandé pour lancer la création.
+
+3. Une première version en 48h max
+Tu reçois une version (non utilisable : bips et autres brouillahes) de ta chanson.
+
+4. Tu fais ton retour
+Tu peux demander des modifications :
+✅ La première est gratuite,
+💰 Les suivantes sont à 2.500 F CFA.
+
+5. Tu valides la version finale et tu paies le solde
+Tu reçois ta chanson complète en MP3, prête à être offerte ou diffusée.
+
+🎬 Et pour aller plus loin ?
+
+Tu veux une vidéo souvenir ou un clip publicitaire ?
+Je peux créer un montage avec des photos, des vidéos ou des images fournies (ou choisies ensemble).
+➡️ Options 100 % personnalisées sur devis.
+
+🎁 Autres options disponibles :
+
+Vidéo karaoké
+
+Chanson remixée pour TikTok
+
+Voix off + musique de fond
+
+Clé USB, QR Code cadeau, diffusion professionnelle
+
+📩 Prêt(e) à te démarquer ?
+Écris-moi maintenant avec ton idée, et créons ensemble une chanson qui marquera les esprits !
+
+Pour voir ce que j'ai déjà réalisé :
+
+- <a href="https://www.tiktok.com/@guiah.songs" target="_blank">Mon Tiktok</a>
+- <a href="https://fb.com/Guiah.Songs/" target="_blank">Mon Facebook</a>
+- <a href="https://www.youtube.com/@GuiahSongs" target="_blank">Ma chaîne Youtube</a>
+
+Je crée tous types de publications pour les réseaux sociaux et bien d'autres choses.
+
+Ne regardez pas une seule vidéo car je fais vraiment tous styles de choses.
+
+Les prix sont vraiment doux : à partir de 5.000 FCFA pour une chanson personnalisée pour votre entreprise ou pour un évènement personnel (Annie, etc.) et à partir de 5.000 F pour une vidéo simple. Bien sûr, le prix de mes services montent en fonction de la complexité, mais j'essaie de rester le plus accessible possible.
+</div>
+</details>
+
+<details class="submenu" id="A6">
+<summary>6) Nos Coordonnées</summary>
+<div class="content">
+Téléphone / WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+Mon adresse : Face DHL, Kribi, Cameroun
+Mon numéro Orange Money : 693 47 42 53 (le nom qui s'affiche lors d'une transaction est David Daniel Laurent Robert LEROY)
+</div>
+</details>
+
+<details class="submenu" id="A7">
+<summary>7) Plus de renseignements ?</summary>
+<div class="content">
+Visitez <a href="https://fb.com/Guiah.Songs/" target="_blank">notre page Facebook</a> ou contactez-nous sur WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+</div>
+</details>
+
+</details>
+
+<!-- ================= B ================= -->
+
+<details id="B">
+<summary>L'Alchimiste : Bières, Vins et Liqueurs artisanales</summary>
+<div class="video-gif">
+  <video autoplay muted loop playsinline>
+    <source src="L_Alchimiste.mp4" type="video/mp4">
+  </video>
+</div>
+<details class="submenu" id="B1">
+<summary>1) Les bières, vins et liqueurs artisanales</summary>
+<div class="content">
+L'Alchimiste fabrique des bières, des vins et des liqueurs artisanales à partir de produit locaux : bissap/foléré, ananas, feuilles d'avocatier, feuilles de citronnier, etc. Le taux d'alcool varie selon la recette et selon que ce soit une bière, un vin ou une liqueur. Les bières sont entre 5 et 9 %, les vins entre 9 et 13 % et les liqueurs elles titrent à 20 %.
+
+Les prix varient selon le format (50 cl, 1 litre ou bidon de 15 litres) et de la recette :
+
+- Bissap / Foléré : 500 FCFA la bouteille de 50 cl, 1.000 FCFA la bouteille d'un litre. Sur commande, le bidon de 15 litres est à 10.000 FCFA seulement.
+
+- Ananas : 750 FCFA la bouteille de 50 cl, 1.500 FCFA la bouteille d'un litre. Sur commande, le bidon de 15 litres est à 15.000 FCFA seulement.
+
+- Autres recettes : sur commande uniquement.
+
+Attention : Pour profiter du prix exceptionnel des bidons de 15 litres, ceux-ci doivent être commandés au moins 3 semaines en avance. Un accompte de 50 % est obligatoire pour valider la commande.
+</div>
+</details>
+
+<details class="submenu" id="B2">
+<summary>2) La formation</summary>
+<div class="content">
+L'Alchimiste propose une formation pour apprendre à fabriquer des bières, des vins et des liqueurs artisanales.
+La formation peut se dérouler en ligne ou en présentiel.
+
+Tarif de la formation en ligne : 50.000 FCFA
+Tarif de la formation en présentiel : Sur devis car le tarif dépend du nombre de participants et du lieu de la formation.
+</div>
+</details>
+
+<details class="submenu" id="B3">
+<summary>3) Nos Coordonnées</summary>
+<div class="content">
+Téléphone / WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+Mon adresse : Face DHL, Kribi, Cameroun
+Mon numéro Orange Money : 693 47 42 53 (le nom qui s'affiche lors d'une transaction est David Daniel Laurent Robert LEROY)
+</div>
+</details>
+
+<details class="submenu" id="B4">
+<summary>4) Plus de renseignements ?</summary>
+<div class="content">
+Contactez-nous sur WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+</div>
+</details>
+
+</details>
+
+<!-- ================= C ================= -->
+
+<details id="C">
+<summary>Rhums arrangés remK</summary>
+<div class="video-gif">
+  <video autoplay muted loop playsinline>
+    <source src="Rhums_Arranges_remK.mp4" type="video/mp4">
+  </video>
+</div>
+<details class="submenu" id="C1">
+<summary>1) Les prix ?</summary>
+<div class="content">
+Les Rhums arrangés remK sont disponibles dans les formats suivants :
+- 6 cl à 2.500 FCFA
+- 20 cl à 7.000 FCFA
+- 70 cl à 20.000 FCFA
+</div>
+</details>
+
+<details class="submenu" id="C2">
+<summary>2) Quelles sont les saveurs disponibles ?</summary>
+<div class="content">
+Voici nos différentes saveurs classées par catégories :
+
+Les fruités :
+
+    • Ananas
+    • Noix de coco
+    • Folérhum (bissap, ananas)
+    • Bissap
+    • Salade de fruits
+    • Melon
+    • Jaabi (graines de jujube : saveur ~ caramel)
+    • Mojirhum (citron, menthe)
+    • Jangolo (mangue, épices)
+    • Citron noir
+
+Les racines :
+
+    • Souchet (graines de palmiste)
+    • Bonbon café (racine, démarreur)
+
+Les épices :
+
+    • Mbongo (comme la sauce noire)
+    • Penja / Curcuma
+    • Kalôrhum (mélange d'épices)
+    • Zizi Pan Pan (aphrodisiaques, démarreurs, retardateurs)
+
+Certaines saveurs supplémentaires sont disponibles au format mignonnette ou flash, consultez-nous.
+</div>
+</details>
+
+<details class="submenu" id="C3">
+<summary>3) "Zizi Pan Pan", qu'est-ce que c'est ?</summary>
+<div class="content">
+Le Zizi Pan Pan est un rhum arrangé fabriqué à partir d'une quinzaine d'aphrodisiaques, de démarreurs et de retardateurs.
+
+Nous avons aussi le rhum arrangé "Bonbon café" à base de la racine que l'on trouve dans les plateaux de démarreurs.
+
+À prendre un peu avant le "match" 😉 (~ 5 cl / ~ 1 heure / à adapter selon la personne en fonction du résultat obtenu).
+</div>
+</details>
+
+<details class="submenu" id="C4">
+<summary>4) Où trouver les trouver ?</summary>
+<div class="content">
+Vous pouvez uniquement commander les Rhums arrangés remK sur ce numéro WhatsApp.
+Les Rhums arrangés remK peuvent être retirés en face de DHL à Kribi, Cameroun.
+Les Rhums arrangés remK peuvent vous être expédiés via les agences de voyage (expédition à vos frais).
+Suivez-nous sur <a href="https://fb.com/RAremK" target="_blank">Facebook</a> pour être informé de notre présence lors des foires artisanales.
+</div>
+</details>
+
+<details class="submenu" id="C5">
+<summary>5) Le sucre</summary>
+<div class="content">
+Les Rhums arrangés remK contiennent du sucre et/ou du miel.
+
+Si vous avez des problèmes de santé (par ex. : diabète), il faudra choisir les recettes à base de miel ou apprécier les Rhums arrangés remK avec modération.
+Quoi qu'il en soit, respectez les consignes de votre médecin soignant.
+</div>
+</details>
+
+<details class="submenu" id="C6">
+<summary>6) Le logo, pourquoi ? Que signifie « remK » ?</summary>
+<div class="content">
+Le rhum et les pirates, c’est une longue histoire d’amour ! Tapez aujourd’hui « rhum » ou « pirate » sur votre moteur de recherche et vous verrez à quel point cette eau-de-vie et les pirates sont liés.
+
+Et bien que ce logo suscite beaucoup de questionnements voire même de la peur parmi les camerounais, nous avons décidé de garder cette « tête de mort » comme logo car elle représente à nos yeux une très bonne illustration de nos produits.
+
+Pour la marque « remK », c’est tout simplement « Kmer » à l’envers. C’est d’ailleurs pour cela que le « K » est en majuscule.
+</div>
+</details>
+
+<details class="submenu" id="C7">
+<summary>7) Nos Coordonnées</summary>
+<div class="content">
+Téléphone / WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+Mon adresse : Face DHL, Kribi, Cameroun
+Mon numéro Orange Money : 693 47 42 53 (le nom qui s'affiche lors d'une transaction est David Daniel Laurent Robert LEROY)
+</div>
+</details>
+
+<details class="submenu" id="C8">
+<summary>8) Plus de renseignements ?</summary>
+<div class="content">
+Visitez <a href="https://fb.com/RAremK" target="_blank">notre page Facebook</a> ou contactez-nous sur WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+</div>
+</details>
+
+</details>
+
+<!-- ================= D ================= -->
+
+<details id="D">
+<summary>Briques de terre compressée BTCS</summary>
+<div class="content">
+Nous proposons :
+
+- La vente de machines pour fabriquer les briques de terre compressées BTCS
+- La location de machines pour fabriquer les briques de terre compressées BTCS
+- La formation à la fabrication des briques de terre compressées BTCS et les différences en maçonnerie
+<div class="images">
+	<img src="BTCS1.jpg" alt="BTCS : Briques de terre compressées stabilisées">
+	<img src="BTCS2.jpg" alt="BTCS : Briques de terre compressées stabilisées">
+	<img src="BTCS3.jpg" alt="BTCS : Briques de terre compressées stabilisées">
+	<img src="BTCS4.jpg" alt="BTCS : Briques de terre compressées stabilisées">
+</div>
+Contactez-nous sur WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+</div>
+</details>
+
+<!-- ================= E ================= -->
+
+<details id="E">
+<summary>Savons</summary>
+<div class="content">
+Nous vendons des savons importés de Thaïlande.
+
+Trois compositions :
+
+- Au lait de chèvre
+- A la carotte
+- Au citron
+<div class="images">
+	<img src="Savons.png" alt="Savons">
+	<img src="Savon_Lait_de_Chevre.jpg" alt="Savon au lait de chèvre">
+	<img src="Savon_Carotte.jpg" alt="Savon à la carotte">
+	<img src="Savon_Citron.jpg" alt="Savon au citron">
+</div>
+Prix : 2.000 FCFA le savon de 250 grammes.
+
+Contactez-nous sur WhatsApp : <a href="https://wa.me/237693474253" target="_blank">+237 693 47 42 53</a>
+</div>
+</details>
+
+</body>
+</html>
